@@ -19,7 +19,7 @@ export function css(done) {
 
 // Nueva tarea para copiar los archivos HTML
 export function html(done) {
-  src('src/*.html')  // Ajusta la ruta si tienes una estructura diferente
+  src('index.html')  // Ajusta la ruta si tienes una estructura diferente
     .pipe(dest('dist/'));  // Copia los archivos HTML a la carpeta 'dist'
   done();
 }
@@ -27,7 +27,7 @@ export function html(done) {
 export function dev() {
   watch('src/scss/**/*.scss', css);
   watch('src/js/**/*.js', js);
-  watch('src/*.html', html);  // Observa los cambios en los archivos HTML
+  watch('index.html', html);  // Observa los cambios en los archivos HTML
 }
 
 export function build(done) {
