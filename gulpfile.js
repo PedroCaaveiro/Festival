@@ -22,5 +22,8 @@ watch('src/scss/**/*.scss',css)
 watch('src/js/**/*.js',js)
 
  }
+ export function build(done) {
+  series(js, css)(done); // Ejecuta primero js y luego css
+}
 
- export default series(js,css, dev)
+ export default series(build, dev);
